@@ -25,7 +25,7 @@ RUN wget https://download.openstreetmap.fr/extracts/europe/france.osm.pbf && \
     osmconvert ./france.pbf --complete-ways --out-pbf -b=4.7,45.8,5,46.6 > ./iarc.osm.pbf
 
 # transform OSM data into vector tiles (.mbtiles file)
-RUN tilemaker ./cern.osm.pbf --config tiles.json --output ./out/cern.mbtiles
+RUN tilemaker ./iarc.osm.pbf --config tiles.json --output ./out/iarc.mbtiles
 
 # second stage, the tile server
 # we're not using klokantech/tileserver-gl-light directly because
@@ -56,7 +56,7 @@ RUN apt-get -qq update \
 RUN cd /usr/src/app && npm install tileserver-gl
 
 # let's take the final product of the build stage
-COPY --from=builder /maps/out/cern.mbtiles /data
+COPY --from=builder /maps/out/iarc.mbtiles /data
 COPY tileserver/config.json /data/
 COPY styles /data/styles
 COPY tileserver/run.sh /usr/src/app

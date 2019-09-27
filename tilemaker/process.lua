@@ -19,21 +19,12 @@ end
 -- Similarly for ways
 
 function way_function(way)
-    local highway = way:Find("highway")
-    local waterway = way:Find("waterway")
     local building = way:Find("building")
     local amenity = way:Find("amenity")
     local natural = way:Find("natural")
     local landuse = way:Find("landuse")
 
-    if highway~="" then
-        way:Layer("transportation", false)
-        way:Attribute("class", highway)
-    end
-    if waterway~="" then
-        way:Layer("waterway", false)
-        way:Attribute("class", waterway)
-    end
+    
     if building~="" then
         local name = way:Find("name")
         if way:Intersects("iarc_sites") then

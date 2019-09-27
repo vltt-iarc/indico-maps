@@ -33,21 +33,6 @@
             }
         },
         {
-            "id": "transportation",
-            "type": "line",
-            "source": "composite",
-            "source-layer": "transportation",
-            "minzoom": 12,
-            "layout": {
-                "visibility": "visible"
-            },
-            "paint": {
-                "line-color": "hsl(158, 0%, 80%)",
-                "line-width": 2,
-                "line-opacity": 0.52
-            }
-        },
-        {
             "id": "building",
             "type": "fill",
             "source": "composite",

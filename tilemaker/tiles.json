@@ -11,7 +11,7 @@
       "simplify_level": 0.0001,
       "simplify_ratio": 2
     },
-    "cern_building": {
+    "iarc_building": {
       "minzoom": 13,
       "maxzoom": 14
     },
@@ -35,10 +35,10 @@
       "minzoom": 14,
       "maxzoom": 14
     },
-    "cern_sites": {
+    "iarc_sites": {
       "minzoom": 13,
       "maxzoom": 14,
-      "source": "shapes/cern.shp",
+      "source": "shapes/iarc.shp",
       "index": true,
       "index_column": "NAME"
     }
@@ -48,9 +48,9 @@
     "maxzoom": 14,
     "basezoom": 14,
     "include_ids": false,
-    "name": "CERN",
+    "name": "IARC",
     "version": "0.1",
-    "description": "CERN Sites and Buildings",
+    "description": "IARC Sites and Buildings",
     "compress": "gzip",
     "metadata": {
       "json": {
@@ -95,8 +95,8 @@
             }
           },
           {
-            "id": "cern_building",
-            "description": "CERN building",
+            "id": "iarc",
+            "description": "IARC building",
             "fields": {
             }
           }

@@ -1,6 +1,6 @@
 {
     "version": 8,
-    "name": "CERN",
+    "name": "IARC",
     "metadata": {
         "mapbox:autocomposite": true,
         "mapbox:type": "template",
@@ -12,15 +12,14 @@
         "mapbox:trackposition": false
     },
     "center": [
-        6.048428646852585,
-        46.23852071751634
+        4.876008,45.743485
     ],
     "zoom": 13.939056813509119,
     "bearing": 0,
     "pitch": 0,
     "sources": {
         "composite": {
-            "url": "mbtiles://cern.mbtiles",
+            "url": "mbtiles://iarc.mbtiles",
             "type": "vector"
         }
     },
@@ -93,10 +92,10 @@
             }
         },
         {
-            "id": "cern-building",
+            "id": "iarc-building",
             "type": "fill",
             "source": "composite",
-            "source-layer": "cern_building",
+            "source-layer": "iarc_building",
             "minzoom": 10,
             "layout": {
                 "visibility": "visible"

@@ -16,7 +16,6 @@ RUN cd /tmp && \
 
 # config file and process script for tilemaker
 COPY tilemaker/tiles.json tilemaker/process.lua /maps/
-COPY shapes/* maps/shapes/
 
 WORKDIR /maps
 

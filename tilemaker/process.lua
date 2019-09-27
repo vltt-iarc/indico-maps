@@ -36,8 +36,8 @@ function way_function(way)
     end
     if building~="" then
         local name = way:Find("name")
-        if way:Intersects("cern_sites") then
-            way:Layer("cern_building", true)
+        if way:Intersects("iarc_sites") then
+            way:Layer("iarc_building", true)
             if name ~= "" then
                 way:LayerAsCentroid("building_names")
                 way:Attribute("name", name)

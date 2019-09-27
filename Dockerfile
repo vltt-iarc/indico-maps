@@ -20,12 +20,12 @@ COPY shapes/* maps/shapes/
 
 WORKDIR /maps
 
-# get Swtizerland map and crop it to the CERN area
-RUN wget https://planet.osm.ch/switzerland.pbf && \
-    osmconvert ./switzerland.pbf --complete-ways --out-pbf -b=5.9992195,46.224,6.1225052,46.3168303 > ./cern.osm.pbf
+# get rhone map and crop it to the IARC area
+RUN wget https://download.openstreetmap.fr/extracts/europe/france/rhone_alpes/rhone.osm.pbf && \
+    osmconvert ./rhone.osm.pbf --complete-ways --out-pbf -b=4.8,45.7,4.9,45.8 > ./iarc.osm.pbf
 
 # transform OSM data into vector tiles (.mbtiles file)
-RUN tilemaker ./cern.osm.pbf --config tiles.json --output ./out/cern.mbtiles
+RUN tilemaker ./iarc.osm.pbf --config tiles.json --output ./out/iarc.mbtiles
 
 # second stage, the tile server
 # we're not using klokantech/tileserver-gl-light directly because
@@ -56,7 +56,7 @@ RUN apt-get -qq update \
 RUN cd /usr/src/app && npm install tileserver-gl
 
 # let's take the final product of the build stage
-COPY --from=0 /maps/out/cern.mbtiles /data
+COPY --from=0 /maps/out/iarc.mbtiles /data
 COPY tileserver/config.json /data/
 COPY styles /data/styles
 COPY tileserver/run.sh /usr/src/app
